@@ -39,6 +39,9 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            label4 = new Label();
+            txtContains = new Button();
+            txtBuscar = new TextBox();
             SuspendLayout();
             // 
             // txtId
@@ -85,7 +88,7 @@
             btnCount.Name = "btnCount";
             btnCount.Size = new Size(169, 89);
             btnCount.TabIndex = 4;
-            btnCount.Text = "Contains";
+            btnCount.Text = "Count";
             btnCount.UseVisualStyleBackColor = true;
             btnCount.Click += btnCount_Click;
             // 
@@ -140,11 +143,40 @@
             label3.TabIndex = 10;
             label3.Text = "Phone";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(18, 317);
+            label4.Name = "label4";
+            label4.Size = new Size(66, 20);
+            label4.TabIndex = 11;
+            label4.Text = "Contains";
+            // 
+            // txtContains
+            // 
+            txtContains.Location = new Point(307, 600);
+            txtContains.Name = "txtContains";
+            txtContains.Size = new Size(169, 89);
+            txtContains.TabIndex = 12;
+            txtContains.Text = "Contains";
+            txtContains.UseVisualStyleBackColor = true;
+            txtContains.Click += txtContains_Click;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(90, 317);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(125, 27);
+            txtBuscar.TabIndex = 13;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1144, 605);
+            ClientSize = new Size(1169, 713);
+            Controls.Add(txtBuscar);
+            Controls.Add(txtContains);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -175,5 +207,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Label label4;
+        private Button txtContains;
+        private TextBox txtBuscar;
     }
 }

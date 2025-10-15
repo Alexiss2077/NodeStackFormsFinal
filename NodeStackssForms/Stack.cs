@@ -44,6 +44,28 @@ namespace NodeStackssForms
             return top!.Value;
         }
 
+
+        public bool Contains(Contact value)
+        {
+            Node? current = top;
+
+            while (current != null)
+            {
+                // Comparamos por ID
+                if (current.Value.Id == value.Id)
+                {
+                    return true;
+                }
+
+                current = current.Next;
+            }
+
+            return false;
+        }
+
+
+
+
         public bool IsEmpty() => top == null;
 
         public int Count => count;

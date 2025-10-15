@@ -114,5 +114,33 @@ namespace NodeStackssForms
                 e.Handled = true; // bloquea el carácter
             }
         }
+
+        private void txtContains_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                MessageBox.Show("Por favor, introduce un ID para buscar.");
+                return;
+            }
+
+            if (!int.TryParse(txtBuscar.Text, out int idBuscado))
+            {
+                MessageBox.Show("El ID debe ser un número válido.");
+                return;
+            }
+
+            // Creamos un contacto temporal solo con el ID
+            Contact contactoBuscado = new Contact(idBuscado, "", "");
+
+            // Verificamos si la pila contiene ese contacto
+            if (pila.Contains(contactoBuscado))
+            {
+                MessageBox.Show($" El contacto con ID {idBuscado} existe en la pila.");
+            }
+            else
+            {
+                MessageBox.Show($" El contacto con ID {idBuscado} no existe en la pila.");
+            }
+        }
     }
 }
