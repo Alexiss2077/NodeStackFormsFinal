@@ -173,6 +173,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ScrollBar;
             ClientSize = new Size(1169, 713);
             Controls.Add(txtBuscar);
             Controls.Add(txtContains);

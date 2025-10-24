@@ -32,8 +32,8 @@ namespace NodeStackssForms
                 return;
             }
 
-            Contact nuevo = new Contact(id, nombre, telefono);
-            pila.Push(nuevo);
+            Contact n = new Contact(id, nombre, telefono);
+            pila.Push(n);
 
             txtId.Clear();
             txtNombre.Clear();

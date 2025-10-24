@@ -14,9 +14,9 @@ namespace NodeStackssForms
 
         public Contact(int id, string nombre, string telefono)
         {
-            Id = id;
-            Nombre = nombre;
-            Telefono = telefono;
+            Id = id; // asigna el id
+            Nombre = nombre; // asigna el nombre
+            Telefono = telefono; // asigna el telefono
         }
 
         public override string ToString()
@@ -25,17 +25,7 @@ namespace NodeStackssForms
         }
 
 
-        public override bool Equals(object? obj)
-        {
-            if (obj is Contact other)
-                return this.Id == other.Id;
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
+        
     }
 
 }

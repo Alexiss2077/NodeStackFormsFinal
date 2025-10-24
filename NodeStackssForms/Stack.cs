@@ -5,85 +5,86 @@ namespace NodeStackssForms
 {
     internal class MyStack
     {
-        private Node? top;
-        private int count;
+        private Node? top; // Apuntador al nodo superior de la pila
+        private int t; // Contador de elementos en la pila
 
         public MyStack()
         {
-            top = null;
-            count = 0;
+            top = null; // inicializa la pila vacía
+            t = 0; // inicializa el contador en 0
         }
 
+        // AGREGAR UN ELEMENTO A LA PILA
         public void Push(Contact value)
         {
-            Node nuevo = new Node(value);
-            nuevo.Next = top;
-            top = nuevo;
-            count++;
+            Node n = new Node(value); // crea un nuevo nodo
+            n.Prev = top; // conecta con el nodo anterior
+            top = n; // actualiza el tope de la pila
+            t++; // incrementa el contador
         }
 
+        // ELIMINAR Y DEVUELVE EL ELEMENTO SUPERIOR DE LA PILA
         public Contact Pop()
         {
+            // Verifica si la pila está vacía
             if (IsEmpty())
-            {
-
+            {                
                 throw new InvalidOperationException("La pila está vacía.");
             }
 
-            Contact val = top!.Value;
-            top = top.Next;
-            count--;
-            return val;
+            Contact val = top!.Value; // guarda el valor del top
+            top = top.Prev; //mueve el top al nodo anterior
+            t--; // decrementa el contador
+            return val; // devuelve el valor eliminado
         }
-        //
+
+        // DEVUELVE EL ELEMENTO SUPERIOR SIN ELIMINARLO
         public Contact Peek()
         {
+            // verifica si la pila está vacía
             if (IsEmpty())
                 throw new InvalidOperationException("La pila está vacía.");
 
+            // devuelve el valor del top sin eliminarlo
             return top!.Value;
         }
 
-
+        // VERIFICA SI LA PILA CONTIENE UN CONTACTO ESPECÍFICO
         public bool Contains(Contact value)
         {
-            Node? current = top;
-
-            while (current != null)
+            Node? t = top; // empezamos desde el tope
+            while (t != null)
             {
-                // Comparamos por ID
-                if (current.Value.Id == value.Id)
-                {
+                if (t.Value.Id == value.Id) // comparación directa por Id
                     return true;
-                }
 
-                current = current.Next;
+                t = t.Prev; // avanzar al nodo anterior
             }
-
-            return false;
+            return false; // si no se encuentra, devolver false
         }
 
-
-
-
+        // devuelve true si la pila está vacía        
         public bool IsEmpty() => top == null;
 
-        public int Count => count;
+        // devuelve la cantidad de elementos en la pila
+        public int Count => t;
 
+        // ELIMINA TODOS LOS ELEMENTOS DE LA PILA
         public void Clear()
         {
-            top = null;
-            count = 0;
+            top = null; // elimina la referencia al top
+            t = 0; // reinicia el contador
         }
 
+        // representa la pila como una cadena de texto
         public override string ToString()
         {
-            Node? current = top;
-            string result = "";
-            while (current != null)
+            Node? t = top; // nodo temporal
+            string result = ""; //almacena la cadena resultante
+            while (t != null)
             {
-                result += current.ToString() + "\n";
-                current = current.Next;
+                result += t.ToString() + "\n"; //añade info del nodo
+                t = t.Prev; // sigue al nodo anterior
             }
             return result;
         }
