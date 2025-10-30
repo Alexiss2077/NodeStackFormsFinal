@@ -42,6 +42,7 @@
             label4 = new Label();
             txtContains = new Button();
             txtBuscar = new TextBox();
+            btnClear = new Button();
             SuspendLayout();
             // 
             // txtId
@@ -54,7 +55,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(307, 45);
+            btnAdd.Location = new Point(337, 12);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(169, 89);
             btnAdd.TabIndex = 1;
@@ -64,7 +65,7 @@
             // 
             // btnPeek
             // 
-            btnPeek.Location = new Point(307, 189);
+            btnPeek.Location = new Point(337, 107);
             btnPeek.Name = "btnPeek";
             btnPeek.Size = new Size(169, 89);
             btnPeek.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             // btnRemove
             // 
-            btnRemove.Location = new Point(307, 336);
+            btnRemove.Location = new Point(337, 208);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(169, 89);
             btnRemove.TabIndex = 3;
@@ -84,7 +85,7 @@
             // 
             // btnCount
             // 
-            btnCount.Location = new Point(307, 476);
+            btnCount.Location = new Point(337, 317);
             btnCount.Name = "btnCount";
             btnCount.Size = new Size(169, 89);
             btnCount.TabIndex = 4;
@@ -94,7 +95,7 @@
             // 
             // txtContent
             // 
-            txtContent.Location = new Point(604, 45);
+            txtContent.Location = new Point(793, 45);
             txtContent.Multiline = true;
             txtContent.Name = "txtContent";
             txtContent.Size = new Size(440, 486);
@@ -154,7 +155,7 @@
             // 
             // txtContains
             // 
-            txtContains.Location = new Point(307, 600);
+            txtContains.Location = new Point(337, 428);
             txtContains.Name = "txtContains";
             txtContains.Size = new Size(169, 89);
             txtContains.TabIndex = 12;
@@ -169,12 +170,23 @@
             txtBuscar.Size = new Size(125, 27);
             txtBuscar.TabIndex = 13;
             // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(337, 542);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(169, 89);
+            btnClear.TabIndex = 14;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
-            ClientSize = new Size(1169, 713);
+            ClientSize = new Size(1287, 727);
+            Controls.Add(btnClear);
             Controls.Add(txtBuscar);
             Controls.Add(txtContains);
             Controls.Add(label4);
@@ -211,5 +223,6 @@
         private Label label4;
         private Button txtContains;
         private TextBox txtBuscar;
+        private Button btnClear;
     }
 }

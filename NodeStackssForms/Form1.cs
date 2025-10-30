@@ -120,8 +120,11 @@ namespace NodeStackssForms
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
                 MessageBox.Show("Por favor, introduce un ID para buscar.");
+                txtBuscar.Focus();
                 return;
+                
             }
+            txtBuscar.Focus();
 
             if (!int.TryParse(txtBuscar.Text, out int idBuscado))
             {
@@ -135,12 +138,33 @@ namespace NodeStackssForms
             // Verificamos si la pila contiene ese contacto
             if (pila.Contains(contactoBuscado))
             {
-                MessageBox.Show($" El contacto con ID {idBuscado} existe en la pila.");
+                MessageBox.Show($" El contacto con ID {idBuscado}  SI existe en la pila.");
             }
             else
             {
-                MessageBox.Show($" El contacto con ID {idBuscado} no existe en la pila.");
+                MessageBox.Show($" El contacto con ID {idBuscado} NO existe en la pila.");
+                txtBuscar.Clear();
             }
+            txtBuscar.Focus();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+            if (pila.IsEmpty())
+            {
+                MessageBox.Show("La pila esta vacía, no hay elementos para vaciar.");
+                txtId.Focus();  
+            }
+            else
+            {
+                pila.Clear();
+                MostrarPila();
+                MessageBox.Show("La pila ha sido vaciada.");
+                txtId.Focus();
+            }
+
+               
         }
     }
 }
