@@ -69,7 +69,8 @@ namespace NodeStackssForms
 
         private void btnCount_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Elementos en la pila: " + pila.Count);
+            int total = pila.Count();
+            MessageBox.Show("Elementos en la pila: " + total);
         }
 
         private void MostrarPila()
